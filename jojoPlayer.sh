@@ -8,7 +8,7 @@ then
   start=${#name}+1
   path=${path:${start}:-4}
   path=${path/'$ep'/"$ep"}
-  echo "$path"
+  echo 'playing video: '"$path"
   smplayer -fullscreen "$path"
 elif [ $1 = "add" ]
 then
