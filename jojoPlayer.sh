@@ -4,7 +4,8 @@ if [ $1 = "play" ]
 then
   name=$2$3
   ep=$4
-  path=$(awk '/'"$name"'/, /end/' /home/mustafa/jojoPlayer/jojoPlayer.config)
+  home=$(whoami)
+  path=$(awk '/'"$name"'/, /end/' /home/$home/jojoPlayer/jojoPlayer.config)
   start=${#name}+1
   path=${path:${start}:-4}
   path=${path/'$ep'/"$ep"}
@@ -18,7 +19,7 @@ then
   echo "put $ep where the episode number is"
   name=$2$3
   read fullPath
-  echo "$name""$fullPath"'end' >> /home/mustafa/jojoPlayer/jojoPlayer.config
+  echo "$name""$fullPath"'end' >> /home/$home/jojoPlayer/jojoPlayer.config
 else
   echo "Script usage: "
   echo "             To play a series: jojoPlayer play name part episode"
