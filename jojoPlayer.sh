@@ -16,7 +16,7 @@ then
   echo "Add the absolute path where episodes live, ensure they all have the same path and the same name."
   echo 'the path should be in double quotations "put path here"'
   echo "The only limit in the name should be the episode ID."
-  echo "put $ep where the episode number is"
+  echo 'put $ep where the episode number is'
   name=$2$3
   read fullPath
   echo "$name""$fullPath"'end' >> /home/$home/jojoPlayer/jojoPlayer.config
