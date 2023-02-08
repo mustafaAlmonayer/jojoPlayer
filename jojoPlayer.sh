@@ -1,10 +1,11 @@
 #!/usr/bin/bash
 
+home=$(whoami)
+
 if [ $1 = "play" ]
 then
   name=$2$3
   ep=$4
-  home=$(whoami)
   path=$(awk '/'"$name"'/, /end/' /home/$home/jojoPlayer/jojoPlayer.config)
   start=${#name}+1
   path=${path:${start}:-4}
@@ -13,6 +14,7 @@ then
   smplayer -fullscreen "$path"
 elif [ $1 = "add" ]
 then
+  
   echo "Add the absolute path where episodes live, ensure they all have the same path and the same name."
   echo 'the path should be in double quotations "put path here"'
   echo "The only limit in the name should be the episode ID."
